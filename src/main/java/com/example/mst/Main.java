@@ -4,23 +4,23 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Главная точка входа.
- * Выполняет вычисление MST для всех графов из ass_3_input.json
- * и сохраняет результаты в ass_3_output.json.
- */
 public final class Main {
     public static void main(String[] args) {
         try {
             String inputPath = "ass_3_input.json";
             String outputPath = "ass_3_output.json";
+            String csvDetailed = "mst_results_detailed.csv";
+            String csvSummary  = "mst_results_summary.csv";
 
-            // параметры CLI: --in path --out path
+            // CLI: --in --out --csv-detailed --csv-summary
             for (int i = 0; i < args.length; i++) {
-                if ("--in".equals(args[i]) && i + 1 < args.length)
-                    inputPath = args[++i];
-                else if ("--out".equals(args[i]) && i + 1 < args.length)
-                    outputPath = args[++i];
+                switch (args[i]) {
+                    case "--in":  inputPath  = args[++i]; break;
+                    case "--out": outputPath = args[++i]; break;
+                    case "--csv-detailed": csvDetailed = args[++i]; break;
+                    case "--csv-summary":  csvSummary  = args[++i]; break;
+                    default: /* ignore unknown */ ;
+                }
             }
 
             System.out.printf("Loading dataset: %s%n", inputPath);
@@ -83,8 +83,16 @@ public final class Main {
                 results.add(item);
             }
 
+            // JSON
             GraphIO.writeOutput(new File(outputPath), results);
-            System.out.printf("%nAll graphs processed successfully! Results saved to: %s%n", outputPath);
+            System.out.printf("%nJSON saved to: %s%n", outputPath);
+
+            // CSV (автоматически)
+            CsvExporter.writeDetailedCSV(results, new File(csvDetailed));
+            CsvExporter.writeSummaryCSV(results, new File(csvSummary));
+            System.out.printf("CSV saved: %s, %s%n", csvDetailed, csvSummary);
+
+            System.out.println("\nAll graphs processed successfully!");
 
         } catch (Exception ex) {
             ex.printStackTrace();
