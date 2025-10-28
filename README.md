@@ -58,15 +58,15 @@ For disconnected graphs, Kruskal correctly identifies that no MST exists, while 
 
 The algorithms were validated with extensive automated tests covering correctness, performance, and consistency.
 
-| Test Case                   | Description                              | Expected Result | Status |
-| --------------------------- | ---------------------------------------- | --------------- | ------ |
-| MST cost equality           | Prim and Kruskal return same total cost  | ✅ Identical     | ✅ Pass |
-| Edge count check            | MST has V−1 edges (for connected graphs) | ✅ Correct       | ✅ Pass |
-| Acyclic property            | No cycles in MST                         | ✅ Acyclic       | ✅ Pass |
-| Connectivity                | All vertices connected in MST            | ✅ Connected     | ✅ Pass |
-| Disconnected graph handling | No MST generated, clear indication       | ✅ Graceful      | ✅ Pass |
-| Execution time validity     | Time ≥ 0 and reasonable                  | ✅ Non-negative  | ✅ Pass |
-| Reproducibility             | Results identical across multiple runs   | ✅ Consistent    | ✅ Pass |
+| Test Case                   | Description                              | Expected Result 
+| --------------------------- | ---------------------------------------- | --------------- 
+| MST cost equality           | Prim and Kruskal return same total cost  | Identical     
+| Edge count check            | MST has V−1 edges (for connected graphs) | Correct       
+| Acyclic property            | No cycles in MST                         | Acyclic       
+| Connectivity                | All vertices connected in MST            | Connected     
+| Disconnected graph handling | No MST generated, clear indication       | Graceful     
+| Execution time validity     | Time ≥ 0 and reasonable                  | Non-negative 
+| Reproducibility             | Results identical across multiple runs   | Consistent    
 
 Performance Visualization
 
