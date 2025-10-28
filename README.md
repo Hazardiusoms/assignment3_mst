@@ -39,9 +39,9 @@ Empirical Observations
 
 | Observation             | Prim                         | Kruskal                        |
 |--------------------------|------------------------------|---------------------------------|
-| Total MST Cost           | ✅ Identical to Kruskal       | ✅ Identical to Prim            |
-| Speed on Dense Graphs    | 🟢 Faster                    | 🔴 Slightly slower              |
-| Speed on Sparse Graphs   | 🔴 Slower                    | 🟢 Faster                      |
+| Total MST Cost           | Identical to Kruskal       | Identical to Prim            |
+| Speed on Dense Graphs    | Faster                    |  Slightly slower              |
+| Speed on Sparse Graphs   | Slower                    |  Faster                      |
 | Operation Count          | More heap operations          | More union/find operations     |
 | Memory Usage             | Moderate                     | Slightly higher due to sorting |
 | Determinism              | Stable                       | Stable                         |
