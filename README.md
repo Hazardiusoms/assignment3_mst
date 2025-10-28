@@ -1,5 +1,5 @@
-🧮 Assignment 3 — Minimum Spanning Tree (Prim & Kruskal)
-1️⃣ Summary of Input Data and Algorithm Results
+ Assignment 3 — Minimum Spanning Tree (Prim & Kruskal)
+ Summary of Input Data and Algorithm Results
 
 A total of 28 graphs were tested across four categories:
 
@@ -14,7 +14,7 @@ A total of 28 graphs were tested across four categories:
 All inputs were generated using the internal generator and stored in ass_3_input.json.
 The MST computation results were automatically exported to ass_3_output.json and summarized in mst_results_summary.csv.
 
-📊 Algorithm Performance Summary by Graph Size
+Algorithm Performance Summary by Graph Size
 | Graph Type         | Avg Vertices | Avg Edges | Prim Cost | Kruskal Cost | Prim Ops | Kruskal Ops | Prim Time (ms) | Kruskal Time (ms) |
 | ------------------ | ------------ | --------- | --------- | ------------ | -------- | ----------- | -------------- | ----------------- |
 | Small (5 graphs)   | 30           | 90        | 124       | 124          | 210      | 197         | 2.8            | 3.1               |
@@ -27,15 +27,15 @@ The MST computation results were automatically exported to ass_3_output.json and
 
 Data generated automatically from JUnit tests and execution logs.
 
-2️⃣ Algorithm Comparison — Theoretical and Empirical Analysis
-🧠 Theoretical Complexity
+Algorithm Comparison — Theoretical and Empirical Analysis
+Theoretical Complexity
 | Algorithm | Concept                      | Data Structure                  | Time Complexity         | Space Complexity | Best Suited For |
 | --------- | ---------------------------- | ------------------------------- | ----------------------- | ---------------- | --------------- |
 | Prim’s    | Expand MST from one node     | Min-Heap + Adjacency List       | O(E log V)              | O(V + E)         | Dense graphs    |
 | Kruskal’s | Sort edges, merge components | Sorted Edge List + Disjoint Set | O(E log E) ≈ O(E log V) | O(V + E)         | Sparse graphs   |
 
-⚙️ Empirical Observations
-### 🧩 Empirical Observations
+Empirical Observations
+### Empirical Observations
 
 | Observation             | Prim                         | Kruskal                        |
 |--------------------------|------------------------------|---------------------------------|
@@ -46,7 +46,7 @@ Data generated automatically from JUnit tests and execution logs.
 | Memory Usage             | Moderate                     | Slightly higher due to sorting |
 | Determinism              | Stable                       | Stable                         |
 
-🧩 Interpretation
+Interpretation
 
 Prim’s Algorithm performs better when the graph is represented as an adjacency list and is dense, because each vertex expansion only adds the smallest connecting edge.
 
@@ -54,7 +54,7 @@ Kruskal’s Algorithm is ideal for sparse graphs or edge list input formats, sin
 
 For disconnected graphs, Kruskal correctly identifies that no MST exists, while Prim may halt early due to unvisited vertices.
 
-3️⃣ Correctness Verification (Automated JUnit Tests)
+3️Correctness Verification (Automated JUnit Tests)
 
 The algorithms were validated with extensive automated tests covering correctness, performance, and consistency.
 
@@ -68,11 +68,11 @@ The algorithms were validated with extensive automated tests covering correctnes
 | Execution time validity     | Time ≥ 0 and reasonable                  | ✅ Non-negative  | ✅ Pass |
 | Reproducibility             | Results identical across multiple runs   | ✅ Consistent    | ✅ Pass |
 
-4️⃣ Performance Visualization
+Performance Visualization
 
 Example charts (generated automatically from CSV):
 
-### 🕒 Execution Time vs Graph Size
+### Execution Time vs Graph Size
 
 | Graph Size  | Prim Time (ms) | Kruskal Time (ms) |
 |--------------|----------------|-------------------|
@@ -82,11 +82,11 @@ Example charts (generated automatically from CSV):
 | Extra Large  | 563.7          | 583.5             |
 
 
-📈 Trend:
+Trend:
 Execution time grows roughly linearly with the number of edges (O(E log V)).
 Prim shows slightly better scalability beyond ~1000 vertices.
 
-5️⃣ Conclusions
+Conclusions
 
 Both algorithms produce identical MST costs, confirming correctness.
 
@@ -102,7 +102,7 @@ Data structure representation
 
 Available memory and parallelism needs
 
-6️⃣ References
+References
 
 Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to Algorithms (3rd Edition). MIT Press.
 
